@@ -1,4 +1,5 @@
 ---
+import Counter from '../components/react/Counter/Counter';
 ---
 
 <html lang="en">
@@ -11,5 +12,10 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<Counter client:load />  <!-- Hydrates immediately on page load -->
+		<Counter client:idle />  <!-- Hydrates once page is done with its initial load and `requestIdleCallback` event has fired -->
+		<Counter client:visible />  <!-- Hydrates once component has entered user's viewport. It uses IntersectionObserver internally -->
+		<Counter client:media="(max-width: 1em)" />  <!-- Hydrates once certain CSS media query is set -->
+		<Counter client:only="react" />  <!-- Skips SSR and render only on the client. Useful for components entirely dependant on client-side APIs -->
 	</body>
 </html>
