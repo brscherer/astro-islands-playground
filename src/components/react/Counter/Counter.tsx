@@ -4,7 +4,7 @@ const Counter = () => {
   const [count, setCounter] = useState(0);
   return (
     <button onClick={() => setCounter((number) => number + 1)}>
-      Counter: {count}
+      React Counter: {count}
     </button>
   );
 };
